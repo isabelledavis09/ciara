@@ -1,0 +1,293 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CIARA | Keep Her In The Game</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="app-shell">
+      <aside class="side-rail" aria-label="CIARA navigation">
+        <a class="brand-lockup" href="#home" data-view-link="home" aria-label="CIARA home">
+          <span class="brand-mark">CIARA</span>
+          <span class="brand-sub">keep_her_in_the_game</span>
+        </a>
+
+        <nav class="rail-nav">
+          <button class="nav-item active" type="button" data-view-link="home">Home</button>
+          <button class="nav-item" type="button" data-view-link="research">Research</button>
+          <button class="nav-item" type="button" data-view-link="generate">Generate</button>
+          <button class="nav-item" type="button" data-view-link="cycle">Cycle</button>
+          <button class="nav-item" type="button" data-view-link="meals">Meal Plan</button>
+          <button class="nav-item" type="button" data-view-link="checklist">Checklist</button>
+          <button class="nav-item" type="button" data-view-link="track">Track</button>
+        </nav>
+
+        <div class="rail-note">
+          <span>Educational only</span>
+          <p>CIARA does not diagnose injuries or replace doctors, physiotherapists, dietitians, or emergency care.</p>
+        </div>
+      </aside>
+
+      <main class="app-main">
+        <header class="top-bar">
+          <div>
+            <p class="eyebrow">Female athlete injury prevention and recovery</p>
+            <h1>CIARA</h1>
+          </div>
+        </header>
+
+        <section class="view-panel active" id="home" data-view="home">
+          <div class="hero-card">
+            <p class="eyebrow">Built by a female athlete, for female athletes</p>
+            <h2 class="wordmark" aria-label="CIARA">CIARA</h2>
+            <div class="code-block" aria-label="CIARA programme logic">
+              <p>program = generate(sport, goal, bodyPart)</p>
+              <p>// PREVENT &rarr; strengthen + tone</p>
+              <p>// RECOVER &rarr; progressive rehab</p>
+            </div>
+            <p class="hero-copy">
+              Sport-specific prehab, progressive recovery, cycle-aware training, nutrition prompts, and performance tracking built around female physiology.
+            </p>
+            <div class="hero-actions">
+              <button class="button primary" type="button" data-view-link="research">About Us</button>
+              <button class="button secondary" type="button" data-view-link="generate">Customise Exercise</button>
+            </div>
+          </div>
+
+          <div class="step-strip">
+            <article>
+              <span>01</span>
+              <h3>Choose sport</h3>
+              <p>CIARA loads a female-athlete injury profile for that sport.</p>
+            </article>
+            <article>
+              <span>02</span>
+              <h3>Pick body focus</h3>
+              <p>Select a body part or All Over / Prevention if you are not injured.</p>
+            </article>
+            <article>
+              <span>03</span>
+              <h3>Review research</h3>
+              <p>Clear evidence notes explain why this work matters for female athletes.</p>
+            </article>
+            <article>
+              <span>04</span>
+              <h3>Generate plan</h3>
+              <p>Get a short session that changes with sport, risk area, goal, and cycle phase.</p>
+            </article>
+          </div>
+        </section>
+
+        <section class="view-panel" id="research" data-view="research">
+          <div class="panel-heading">
+            <p class="eyebrow">Step 1-3</p>
+            <h2>Choose sport, body focus, then review the evidence.</h2>
+            <p>No separate research board. CIARA shows the relevant notes before you generate your programme.</p>
+          </div>
+          <div class="research-flow">
+            <form class="compact-panel" id="researchForm">
+              <label>
+                Sport
+                <select id="researchSportSelect"></select>
+              </label>
+              <label>
+                Body Part
+                <select id="researchBodySelect"></select>
+              </label>
+              <button class="button primary" type="button" data-view-link="generate">Use this in generator</button>
+            </form>
+            <article class="evidence-panel">
+              <div class="program-topline">
+                <span id="researchSportLabel">Camogie / Gaelic football</span>
+                <span id="researchBodyLabel">All Over / Prevention</span>
+              </div>
+              <h3>Why this matters</h3>
+              <div id="researchNotes" class="note-list"></div>
+              <p class="source-line">
+                Source notes include female athlete injury research, FIFA 11+ style neuromuscular prevention work,
+                British Journal of Sports Medicine themes, Yale Sports Medicine, Cleveland Clinic, equipment-fit research,
+                and HSE healthy eating guidance where nutrition is discussed.
+              </p>
+            </article>
+          </div>
+        </section>
+
+        <section class="view-panel" id="generate" data-view="generate">
+          <div class="panel-heading">
+            <p class="eyebrow">Step 4</p>
+            <h2>Generate your programme.</h2>
+            <p>Programme controls are compact; the evidence and output carry the page.</p>
+          </div>
+
+          <div class="generator-grid">
+            <form class="control-panel compact-panel" id="programForm">
+              <label>
+                Sport
+                <select id="sportSelect" name="sport"></select>
+              </label>
+
+              <fieldset>
+                <legend>Goal</legend>
+                <label class="choice">
+                  <input type="radio" name="goal" value="prevent" checked />
+                  <span>Strength and Conditioning <small>I am strong — keep me this way</small></span>
+                </label>
+                <label class="choice">
+                  <input type="radio" name="goal" value="recover" />
+                  <span>RECOVER <small>I am injured, rebuild safely.</small></span>
+                </label>
+              </fieldset>
+
+              <label>
+                Body Part
+                <select id="bodyPartSelect" name="bodyPart"></select>
+              </label>
+
+              <label>
+                Cycle phase
+                <select id="phaseSelect" name="phase">
+                  <option value="menstrual">Menstrual</option>
+                  <option value="follicular" selected>Follicular</option>
+                  <option value="ovulation">Ovulation</option>
+                  <option value="luteal">Luteal</option>
+                </select>
+              </label>
+            </form>
+
+            <article class="evidence-panel">
+              <p class="eyebrow">Research before programme</p>
+              <h3>Relevant female-athlete notes</h3>
+              <div id="generatorNotes" class="note-list"></div>
+              <p class="source-line">Supportive education only. These notes guide training priorities; they are not medical predictions.</p>
+            </article>
+
+            <article class="program-card" aria-live="polite">
+              <div class="program-topline">
+                <span id="programType">Strength and Conditioning</span>
+                <span>15-20 min</span>
+                <span>2-3x/week</span>
+              </div>
+              <h3 id="programTitle"></h3>
+              <p id="programSummary"></p>
+              <div class="injury-profile" id="injuryProfile"></div>
+              <div class="programme-list" id="programBlocks"></div>
+              <div class="progression">
+                <h4>Progression</h4>
+                <p id="progressionText"></p>
+              </div>
+            </article>
+          </div>
+        </section>
+
+        <section class="view-panel" id="cycle" data-view="cycle">
+          <div class="panel-heading">
+            <p class="eyebrow">Cycle Tracking</p>
+            <h2>Train with female physiology in view.</h2>
+            <p>These are supportive training suggestions, not medical predictions.</p>
+          </div>
+          <div class="cycle-grid">
+            <form class="compact-panel" id="cycleForm">
+              <label>Period start date <input id="periodStart" type="date" /></label>
+              <label>Expected cycle length <input id="cycleLength" type="number" value="28" min="21" max="45" /></label>
+              <label>Symptoms <select id="cycleSymptoms"><option>Mild</option><option>Moderate cramps</option><option>Heavy fatigue</option><option>Headache / low mood</option></select></label>
+              <label>Energy level <input id="energyLevel" type="range" min="1" max="10" value="6" /></label>
+              <label>Cramps <input id="crampsLevel" type="range" min="0" max="10" value="3" /></label>
+              <label>Mood <select id="moodSelect"><option>Steady</option><option>Motivated</option><option>Low</option><option>Stressed</option></select></label>
+              <label>Soreness <input id="cycleSoreness" type="range" min="0" max="10" value="4" /></label>
+              <label>Sleep <select id="cycleSleep"><option>Good</option><option>Okay</option><option>Poor</option></select></label>
+              <label>Training readiness <select id="trainingReadiness"><option>Ready</option><option selected>Steady</option><option>Needs lower load</option><option>Recovery priority</option></select></label>
+              <label>Cycle phase <select id="cyclePhaseInput"><option value="menstrual">Menstrual</option><option value="follicular" selected>Follicular</option><option value="ovulation">Ovulation</option><option value="luteal">Luteal</option></select></label>
+            </form>
+            <article class="program-card">
+              <div class="program-topline"><span id="cyclePhaseLabel">Follicular phase</span><span id="readinessLabel">Ready: steady</span></div>
+              <h3>Today’s cycle-aware training suggestion</h3>
+              <p id="cycleAdvice"></p>
+              <div class="note-list" id="phaseNotes"></div>
+            </article>
+          </div>
+        </section>
+
+        <section class="view-panel" id="meals" data-view="meals">
+          <div class="panel-heading">
+            <p class="eyebrow">Meal Plan</p>
+            <h2>Fuel performance without restriction.</h2>
+            <p><strong>Based on HSE healthy eating guidance.</strong></p>
+          </div>
+          <div class="meal-layout">
+            <form class="compact-panel" id="mealForm">
+              <label>Sport <select id="mealSportSelect"></select></label>
+              <label>Activity level <select id="activityLevel"><option>Moderate</option><option>High</option><option>Match / competition</option><option>Light / recovery</option></select></label>
+              <label>Day type <select id="dayType"><option>Training day</option><option>Rest day</option></select></label>
+              <label>Cycle phase <select id="mealPhase"><option>Menstrual</option><option selected>Follicular</option><option>Ovulation</option><option>Luteal</option></select></label>
+            </form>
+            <article class="program-card">
+              <div class="program-topline"><span>Based on HSE healthy eating guidance</span></div>
+              <h3 id="mealTitle"></h3>
+              <div class="programme-list" id="mealPlan"></div>
+              <p class="source-line">
+                Includes carbohydrates for energy, protein for repair, fruit and vegetables, calcium/vitamin D sources,
+                iron-rich foods, and hydration prompts. No restrictive dieting, calorie obsession, weight-loss messaging, or body-shaming.
+                Users with medical conditions, allergies, eating disorders, or elite nutrition needs should speak to a qualified professional.
+              </p>
+            </article>
+          </div>
+        </section>
+
+        <section class="view-panel" id="checklist" data-view="checklist">
+          <div class="panel-heading">
+            <p class="eyebrow">Daily Checklist</p>
+            <h2>Small habits that keep her playing.</h2>
+          </div>
+          <article class="program-card">
+            <div class="check-progress">
+              <strong id="checkPercent">0%</strong>
+              <div class="bar"><i id="checkBar" style="width:0%"></i></div>
+            </div>
+            <div class="checklist-grid" id="dailyChecklist"></div>
+          </article>
+        </section>
+
+        <section class="view-panel" id="track" data-view="track">
+          <div class="panel-heading">
+            <p class="eyebrow">Tracking + Evaluation</p>
+            <h2>Supportive feedback for better sport performance.</h2>
+          </div>
+          <div class="tracking-grid">
+            <form class="compact-panel" id="trackingForm">
+              <label>Exercises completed <input id="trackExercises" type="range" min="0" max="10" value="7" /></label>
+              <label>Food eaten <input id="trackFood" type="range" min="0" max="10" value="6" /></label>
+              <label>Hydration <input id="trackHydration" type="range" min="0" max="10" value="5" /></label>
+              <label>Sleep <input id="trackSleep" type="range" min="0" max="10" value="7" /></label>
+              <label>Period/cycle symptoms <input id="trackCycle" type="range" min="0" max="10" value="4" /></label>
+              <label>Soreness <input id="trackSoreness" type="range" min="0" max="10" value="3" /></label>
+              <label>Injury status <select id="trackInjury"><option>No injury</option><option>Niggle</option><option>Recovering</option><option>Needs professional support</option></select></label>
+              <label>Mood <input id="trackMood" type="range" min="0" max="10" value="7" /></label>
+              <label>Energy <input id="trackEnergy" type="range" min="0" max="10" value="6" /></label>
+              <label>Training load <input id="trackLoad" type="range" min="0" max="10" value="6" /></label>
+            </form>
+            <article class="program-card">
+              <h3>How to improve this week</h3>
+              <div class="metric-grid">
+                <article><span>Readiness</span><strong id="readinessScore">72%</strong><div class="bar"><i id="readinessBar" style="width:72%"></i></div></article>
+                <article><span>Recovery</span><strong id="recoveryScore">Good</strong><div class="bar"><i id="recoveryBar" style="width:70%"></i></div></article>
+              </div>
+              <div class="suggestions" id="performanceFeedback"></div>
+            </article>
+          </div>
+        </section>
+      </main>
+    </div>
+
+    <nav class="mobile-tabs" aria-label="Mobile app tabs">
+      <button class="active" type="button" data-view-link="home">Home</button>
+      <button type="button" data-view-link="research">Research</button>
+      <button type="button" data-view-link="generate">Generate</button>
+      <button type="button" data-view-link="cycle">Cycle</button>
+      <button type="button" data-view-link="track">Track</button>
+    </nav>
+
+    <script src="app.js"></script>
+  </body>
+</html>
