@@ -106,6 +106,24 @@ const sports = {
       foot: ["Foot intrinsic doming", "Calf raise", "Toe yoga"]
     }
   },
+  golf: {
+    label: "Golf",
+    risks: ["back", "shoulder", "wrist", "elbow", "hip"],
+    profile: "rotational power, lower-back control, shoulder mobility, wrist/elbow load, hip rotation, walking volume, and swing repeatability",
+    evidence: [
+      ["Rotational load", "Golf repeatedly loads the lower back, hips, shoulders, wrists, and elbows through swing rotation and practice volume."],
+      ["Female equipment fit", "Golf is one sport where women's flex shafts and fitting options are more common, but strength and mobility still protect swing mechanics."],
+      ["Prevention focus", "Train trunk control, hip rotation, rotator cuff endurance, wrist/forearm strength, and progressive practice load."]
+    ],
+    exercises: {
+      all: ["Golf mobility warm-up", "Pallof press", "Hip airplane support", "Band external rotation"],
+      back: ["Pallof press", "Thoracic rotation", "Hip hinge patterning"],
+      shoulder: ["Rotator cuff external rotation", "Scapular row", "Serratus wall slide"],
+      wrist: ["Wrist extension eccentrics", "Grip endurance holds", "Forearm pronation/supination"],
+      elbow: ["Eccentric wrist extension", "Forearm pronation/supination", "Grip endurance"],
+      hip: ["Hip airplane support", "Lateral lunge", "Glute bridge march"]
+    }
+  },
   swimming: {
     label: "Swimming",
     risks: ["shoulder", "rotator-cuff", "neck", "back"],
